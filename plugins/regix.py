@@ -167,7 +167,7 @@ async def forward(bot, msg, m, sts, protect):
                 protect_content=protect,
                 message_ids=batch
             )
-            await asyncio.sleep(1) # wait 1 second between batches
+            await asyncio.sleep(10) # wait 1 second between batches
     except FloodWait as e:
         await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', e.value, sts)
         await asyncio.sleep(e.value)
