@@ -12,7 +12,7 @@ class Translation(object):
 
   DONATE_TXT = """<b><i>If you liked me ❤️. consider make a donation to support my developer 👦
 
-UPI ID - </i></b><code>RahulReviews@UPI</code>"""
+UPI ID - </i></b><code>jasuranbots@axl</code>"""
 
   HELP_TXT = """<b><u>🔆 ʜᴇʟᴘ</b></u>
 
