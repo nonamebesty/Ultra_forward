@@ -12,7 +12,7 @@ class Config:
     LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002396553917'))
     FORCE_SUB_CHANNEL = environ.get("FORCE_SUB_CHANNEL", "-1002316896807") 
     FORCE_SUB_ON = environ.get("FORCE_SUB_ON", "True")
-    PORT = environ.get('PORT', '8080')
+    PORT = environ.get('PORT', '')
    
 class temp(object): 
     lock = {}
