@@ -157,17 +157,25 @@ async def copy(bot, msg, m, sts):
 # For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 async def forward(bot, msg, m, sts, protect):
-   try:                             
-     await bot.forward_messages(
-           chat_id=sts.get('TO'),
-           from_chat_id=sts.get('FROM'), 
-           protect_content=protect,
-           message_ids=msg)
-   except FloodWait as e:
-     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', e.value, sts)
-     await asyncio.sleep(e.value)
-     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
-     await forward(bot, msg, m, sts, protect)
+    try:
+        batch_size = 100
+        for i in range(0, len(msg), batch_size):
+            batch = msg[i:i+batch_size]
+            await bot.forward_messages(
+                chat_id=sts.get('TO'),
+                from_chat_id=sts.get('FROM'),
+                protect_content=protect,
+                message_ids=batch
+            )
+            await asyncio.sleep(10) # wait 10 seconds between batches
+    except FloodWait as e:
+        await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', e.value, sts)
+        await asyncio.sleep(e.value)
+        await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
+        await forward(bot, msg, m, sts, protect)
+    except Exception as e:
+        print(e)
+        sts.add('deleted')
 
 PROGRESS = """
 📈 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ : {0} %
