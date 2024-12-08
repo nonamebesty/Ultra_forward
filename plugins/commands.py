@@ -18,8 +18,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMedi
 main_buttons = [[
         InlineKeyboardButton('❗️ʜᴇʟᴘ', callback_data='help')
         ],[
-        InlineKeyboardButton('📜 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://telegram.me/TechifySupport'),
-        InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://telegram.me/TechifyBots')
+        InlineKeyboardButton('📜 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://telegram.me/Egmore_links'),
+        InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://telegram.me/Egmore_links')
         ],[
         InlineKeyboardButton('💳 ᴅᴏɴᴀᴛᴇ', callback_data='donate')
         ]]
@@ -214,5 +214,5 @@ async def server_status(bot, query):
 @Client.on_message(filters.private & filters.command(['donate']))
 async def restart(client, message):
     msg = await message.reply_text(
-        text="<i>__If you liked my service❤__.\n\nConsider and make a donation to support my developer 👦\n\n\nUPI ID - `RahulReviews@UPI`</i>"
+        text="<i>__If you liked my service❤__.\n\nConsider and make a donation to support my developer 👦\n\n\nUPI ID - `jasuranbots@axl`</i>"
         )
