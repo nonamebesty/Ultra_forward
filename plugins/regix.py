@@ -84,8 +84,8 @@ async def pub_(bot, message):
             ):
                 if await is_cancelled(client, user, m, sts):
                    return
-                if pling %20 == 0: 
-                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 50, sts)
+                if pling %50 == 0: 
+                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
                 pling += 1
                 sts.add('fetched')
                 if message == "DUPLICATE":
