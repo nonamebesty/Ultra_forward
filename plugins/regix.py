@@ -74,7 +74,7 @@ async def pub_(bot, message):
         try:
           MSG = []
           pling=0
-          await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
+          await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 200, sts)
           print(f"Starting Forwarding Process... From :{sts.get('FROM')} To: {sts.get('TO')} Total: {sts.get('limit')} stats : {sts.get('skip')})")
           async for message in client.iter_messages(
             client,
@@ -84,8 +84,8 @@ async def pub_(bot, message):
             ):
                 if await is_cancelled(client, user, m, sts):
                    return
-                if pling %20 == 0: 
-                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
+                if pling %100 == 0: 
+                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 200, sts)
                 pling += 1
                 sts.add('fetched')
                 if message == "DUPLICATE":
@@ -219,9 +219,9 @@ async def edit(msg, title, status, sts):
    text = TEXT.format(i.total, i.fetched, i.total_files, i.duplicate, i.deleted, i.skip, i.filtered, status, percentage, title)
    if status in ["ᴄᴀɴᴄᴇʟʟᴇᴅ", "ᴄᴏᴍᴘʟᴇᴛᴇᴅ"]:
       button.append(
-         [InlineKeyboardButton('💟sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ💟', url='https://telegram.me/TechifySupport')])
+         [InlineKeyboardButton('💟sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ💟', url='https://telegram.me/Egmore_links')])
       button.append(
-         [InlineKeyboardButton('💠ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ💠', url='https://telegram.me/TechifyBots')]
+         [InlineKeyboardButton('💠ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ💠', url='https://telegram.me/Egmore_links')]
          )
    else:
       button.append([InlineKeyboardButton('• ᴄᴀɴᴄᴇʟ', 'terminate_frwd')])
