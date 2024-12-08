@@ -74,7 +74,7 @@ async def pub_(bot, message):
         try:
           MSG = []
           pling=0
-          await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 200, sts)
+          await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
           print(f"Starting Forwarding Process... From :{sts.get('FROM')} To: {sts.get('TO')} Total: {sts.get('limit')} stats : {sts.get('skip')})")
           async for message in client.iter_messages(
             client,
@@ -85,7 +85,7 @@ async def pub_(bot, message):
                 if await is_cancelled(client, user, m, sts):
                    return
                 if pling %100 == 0: 
-                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 200, sts)
+                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
                 pling += 1
                 sts.add('fetched')
                 if message == "DUPLICATE":
