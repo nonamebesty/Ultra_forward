@@ -158,7 +158,7 @@ async def copy(bot, msg, m, sts):
 
 async def forward(bot, msg, m, sts, protect):
     try:
-        batch_size = 100
+        batch_size = 50
         for i in range(0, len(msg), batch_size):
             batch = msg[i:i+batch_size]
             await bot.forward_messages(
